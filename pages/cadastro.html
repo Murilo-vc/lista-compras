@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../styles/cadastro.css">
+
+</head>
+<body>
+    <div class="form-container">
+        <form method="post" id="form">
+            <div class="form-title">
+                <h2>Cadastro</h2>
+            </div>
+            <div>
+                <label for="fuser">Usuário: </label>
+                <input type="text" id="fuser" required>    
+            </div>
+            <div>
+                <label for="fsenha">Senha: </label>
+                <input type="password" id="fsenha" required>
+            </div>
+            <div class="button-container">
+                <button type="button" id="cadastro-button">Cadastrar</button>
+            </div>
+            <div>
+                <span>Já possui uma conta?</span> 
+                <a href="login.html">Entrar</a>
+            </div>
+        </form>
+    </div>
+
+    <script src="../script/cadastro.js"></script>
+</body>
+</html>

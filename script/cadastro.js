@@ -1,12 +1,22 @@
+class Usuario {
 
+    constructor(username, senha){
+
+        this.username = username;
+        this.senha = senha;
+        this.listas = [];
+    }
+}
 
 let button = document.getElementById("cadastro-button");
-let msgCadastro = document.getElementById("msg-cadastro");
 button.addEventListener('click', function () {
+    
+    console.log('Yes');
 
     var nome = document.getElementById("fuser").value;
     var senha = document.getElementById("fsenha").value;
 
+    //Verifica se o nome ja esta em uso
     if(localStorage.getItem(JSON.stringify(nome))){
 
         console.log("Usuário já cadastrado");
@@ -14,36 +24,11 @@ button.addEventListener('click', function () {
         return;
     } else{
 
-        localStorage.setItem(JSON.stringify(nome), JSON.stringify(senha));
+        const usuario1 = new Usuario(nome, senha);
+
+        //armazena no local storage um cadastro novo
+        localStorage.setItem(JSON.stringify(nome), JSON.stringify(usuario1));
         console.log('Cadastro efetuado!');
         window.location.replace('login.html');
     }
-
-    //var jaCadastrado = false;
-
-    //Pega a lista de usuario se ja houver, senão pega um array vazio
-    /*
-    var usuarios = JSON.parse(localStorage.getItem('users') || '[]');
-
-    usuarios.forEach(usuario => {
-        if(usuario.username == nome){
-            
-        }
-    });
-
-    if(!jaCadastrado){
-
-        usuarios.push({
-            username: nome,
-            password: senha
-        });
-
-        const userData = JSON.stringify(usuarios);
-        
-        localStorage.setItem('users', userData);
-        
-        window.location.replace('login.html');
-        console.log("Cadastro efetuado!");
-        return;
-    }*/
 });

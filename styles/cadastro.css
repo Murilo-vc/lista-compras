@@ -58,3 +58,7 @@ form button {
     margin: 20px 0;
     width: 100%;
 }
+
+#msg-cadastro {
+    color: rgb(129, 0, 0);
+}

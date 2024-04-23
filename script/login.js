@@ -11,7 +11,7 @@ class Usuario {
     }
 }
 
-
+let msgAutenticao = document.getElementById("msg-autenticacao");
 let botaoLogin = document.getElementById("login-button");
 botaoLogin.addEventListener('click', (e) => {
     e.preventDefault();
@@ -23,6 +23,7 @@ botaoLogin.addEventListener('click', (e) => {
     if(!localStorage.getItem(JSON.stringify(nome))){
 
         console.log('Usuário não encontrado!');
+        msgAutenticao.removeAttribute("hidden");
         document.getElementById("fsenha").value = '';
         return;
     }

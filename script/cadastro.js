@@ -8,6 +8,7 @@ class Usuario {
     }
 }
 
+let msgCadastro = document.getElementById("msg-cadastro");
 let button = document.getElementById("cadastro-button");
 button.addEventListener('click', function () {
     

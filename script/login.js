@@ -1,5 +1,7 @@
 
 let botaoLogin = document.getElementById("login-button");
+let msgAutenticao = document.getElementById("msg-autenticacao");
+
 botaoLogin.addEventListener('click', (e) => {
     e.preventDefault();
                 
@@ -23,4 +25,5 @@ botaoLogin.addEventListener('click', (e) => {
     });
     
     console.log("Usuario não encontrado!");
+    msgAutenticao.removeAttribute("hidden"); 
 });

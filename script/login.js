@@ -34,11 +34,16 @@ botaoLogin.addEventListener('click', (e) => {
 
     //verifica se a senha confere a do storage, se for igual leva o usuario pra home page
     if(usuario1.senha == senha){
-
         console.log('Senha bate');
+        console.log(fpconectado);
+        if(fpconectado.checked){
+            localStorage.setItem("LOGGED_USER", JSON.stringify(usuario1.username));
+        } else {
+            sessionStorage.setItem("LOGGED_USER", JSON.stringify(usuario1.username));
+        }
         window.location.replace('../index.html');
-        
-    } else{
+    }
+     else{
         console.log('Senha Incorreta!');
         document.getElementById("fsenha").value = '';
     }

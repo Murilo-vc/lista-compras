@@ -8,17 +8,14 @@ class Usuario {
     }
 }
 
+let msgCadastro = document.getElementById("msg-cadastro");
 let button = document.getElementById("cadastro-button");
 button.addEventListener('click', function () {
-    
-    console.log('Yes');
-
     var nome = document.getElementById("fuser").value;
     var senha = document.getElementById("fsenha").value;
 
     //Verifica se o nome ja esta em uso
     if(localStorage.getItem(JSON.stringify(nome))){
-
         console.log("Usuário já cadastrado");
         msgCadastro.removeAttribute("hidden");
         return;

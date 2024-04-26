@@ -1,16 +1,35 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bem vindo!</title>
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Bem vindo!</title>
+    </head>
 <body>
+<script src="main.js"></script>
     <div>
         <h1>Bem Vindo!</h1>
     </div>
     <div>
-        <button type="button" onclick="window.location.href='./pages/login.html'">Sair</button>
+        <h2>Lista de compras</h2>
+        <input type="text" id="nome-lista" name="nome-lista">
+        <button type="button" id="cadastra-lista">Cadastrar</button>
     </div>
+    <div>
+        <button type="button" id="logout-button" name="logout-button">Sair</button>
+    </div>
+    <table id="lista-compras">
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Criação</th>
+            </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
 </body>
+<script src="script/listas.js"></script>
+<script src="script/logout.js"></script>
 </html>

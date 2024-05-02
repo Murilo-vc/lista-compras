@@ -1,10 +1,4 @@
-class Lista {
-    constructor(nome, criacao){
-        this.id = crypto.randomUUID();
-        this.nome = nome;
-        this.criacao = criacao;
-    }
-}
+import * as listaEntity from "./entities/lista.js"
 
 function exibirListas(listas){
 
@@ -67,7 +61,7 @@ button.addEventListener('click', function(){
     today = dd + '/' + mm + '/' + yyyy;
 
     //cria uma lista nova
-    var lista = new Lista(nomeLista, today);
+    var lista = new listaEntity.Lista(nomeLista, today);
 
     //atribui o id da lista ao array listas do usuario
     usuario.listas.push(lista.id);

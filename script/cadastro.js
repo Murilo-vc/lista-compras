@@ -1,12 +1,4 @@
-class Usuario {
-
-    constructor(username, senha){
-
-        this.username = username;
-        this.senha = senha;
-        this.listas = [];
-    }
-}
+import * as usuarioEntity from './entities/usuario.js'
 
 let msgCadastro = document.getElementById("msg-cadastro");
 let button = document.getElementById("cadastro-button");
@@ -21,7 +13,7 @@ button.addEventListener('click', function () {
         return;
     } else{
 
-        const usuario1 = new Usuario(nome, senha);
+        const usuario1 = new usuarioEntity.Usuario(nome, senha);
 
         //armazena no local storage um cadastro novo
         localStorage.setItem(JSON.stringify(nome), JSON.stringify(usuario1));

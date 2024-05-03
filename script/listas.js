@@ -1,12 +1,12 @@
 import * as listaEntity from "./entities/lista.js"
 
-function exibirListas(listas){
+function exibirListas(usuario){
 
     //pega o elemento tbody do index
     var tbodyref = document.getElementById("lista-compras").getElementsByTagName("tbody")[0]
 
     
-    listas.forEach(idLista => {
+    usuario.listas.forEach(idLista => {
         
         //utiliza o id da lista para pegar a mesma no localstorage
         var lista = JSON.parse(localStorage.getItem(idLista));
@@ -30,6 +30,34 @@ function exibirListas(listas){
         //Insere a data de criacao na celula criacao
         newText = document.createTextNode(JSON.stringify(lista.criacao));
         criacaoCell.appendChild(newText);
+
+        //Cria os botoes de interacao da lista
+        var edit = document.createElement("button")
+        var removeList = document.createElement("button")
+
+        //Muda o texto dos botoes e a funcao onclick dos mesmos
+        edit.innerText = 'Editar'
+        edit.onclick = function (){
+
+            sessionStorage.setItem('SELECTED_LIST', lista.id)
+            location.replace("../pages/editarLista.html")
+        }
+        removeList.innerText = 'Remover Lista'
+        removeList.onclick = function (){
+
+            const index = usuario.listas.indexOf(idLista)
+            if(index > -1){
+                
+                usuario.listas.splice(index, 1)
+                localStorage.removeItem(lista.id)
+                localStorage.setItem(JSON.stringify(usuario.username), JSON.stringify(usuario))
+                location.reload()
+            }
+        }
+
+        //Insere os botoes como parte da tabela
+        newRow.insertCell().appendChild(edit)
+        newRow.insertCell().appendChild(removeList)
     });
 
 }
@@ -43,7 +71,7 @@ if(localStorage.getItem("LOGGED_USER")){
 var usuario = JSON.parse(localStorage.getItem(logged_user));
 
 //exibe as listas ja atribuidas ao usuario
-exibirListas(usuario.listas);
+exibirListas(usuario);
 
 let button = document.getElementById("cadastra-lista");
 button.addEventListener('click', function(){
@@ -73,3 +101,4 @@ button.addEventListener('click', function(){
     //recarrega a pagina para exibir a lista nova criada
     location.reload();
 });
+

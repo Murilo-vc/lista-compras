@@ -6,12 +6,9 @@ export class Usuario {
     }
 
     static getByUsername(username){
-        for (let index = 0; index < localStorage.length; index++) {
-            var id = localStorage.key(index);
-            var usuario = JSON.parse(localStorage.getItem(id));
-            if(usuario.username === username){
-                return usuario;
-            }
+        var usuario = JSON.parse(localStorage.getItem(username));
+        if(usuario.username === username){
+            return usuario;
         }
     }
 

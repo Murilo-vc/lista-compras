@@ -100,5 +100,3 @@ button.addEventListener('click', function(){
 
     //recarrega a pagina para exibir a lista nova criada
     location.reload();
-});
-

@@ -7,7 +7,7 @@ button.addEventListener('click', function () {
     var senha = document.getElementById("fsenha").value;
 
     //Verifica se o nome ja esta em uso
-    if(localStorage.getItem(JSON.stringify(nome))){
+    if(localStorage.getItem(nome)){
         console.log("Usuário já cadastrado");
         msgCadastro.removeAttribute("hidden");
         return;
@@ -16,7 +16,7 @@ button.addEventListener('click', function () {
         const usuario1 = new usuarioEntity.Usuario(nome, senha);
 
         //armazena no local storage um cadastro novo
-        localStorage.setItem(JSON.stringify(nome), JSON.stringify(usuario1));
+        localStorage.setItem(nome, JSON.stringify(usuario1));
         console.log('Cadastro efetuado!');
         window.location.replace('login.html');
     }

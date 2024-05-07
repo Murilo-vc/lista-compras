@@ -50,7 +50,7 @@ function exibirListas(usuario){
                 
                 usuario.listas.splice(index, 1)
                 localStorage.removeItem(lista.id)
-                localStorage.setItem(JSON.stringify(usuario.username), JSON.stringify(usuario))
+                localStorage.setItem(usuario.username, JSON.stringify(usuario))
                 location.reload()
             }
         }
@@ -68,7 +68,7 @@ if(localStorage.getItem("LOGGED_USER")){
     var logged_user = sessionStorage.getItem("LOGGED_USER")
 }
 
-var usuario = JSON.parse(localStorage.getItem(logged_user));
+var usuario = JSON.parse(localStorage.getItem(JSON.parse(logged_user)));
 
 //exibe as listas ja atribuidas ao usuario
 exibirListas(usuario);
@@ -77,6 +77,7 @@ let button = document.getElementById("cadastra-lista");
 button.addEventListener('click', function(){
     var nomeLista = document.getElementById('nome-lista').value;
 
+    console.log('yes')
     //cria objeto Date
     var today = new Date();
 
@@ -95,8 +96,9 @@ button.addEventListener('click', function(){
     usuario.listas.push(lista.id);
 
     //sobscreve o usuario no localStorage e cria um registro com a lista
-    localStorage.setItem(logged_user, JSON.stringify(usuario));
+    localStorage.setItem(JSON.parse(logged_user), JSON.stringify(usuario));
     localStorage.setItem(lista.id, JSON.stringify(lista));
 
     //recarrega a pagina para exibir a lista nova criada
-    location.reload();
+    location.reload()
+});

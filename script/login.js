@@ -9,7 +9,7 @@ botaoLogin.addEventListener('click', (e) => {
     var senha = document.getElementById("fsenha").value;
 
     //verifica se existe um usuario com esse nome
-    if(!localStorage.getItem(JSON.stringify(nome))){
+    if(!localStorage.getItem(nome)){
 
         console.log('Usuário não encontrado!');
         msgAutenticao.removeAttribute("hidden");

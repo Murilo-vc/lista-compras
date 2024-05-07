@@ -7,7 +7,7 @@ export class Usuario {
 
     static getByUsername(username){
         var usuario = JSON.parse(localStorage.getItem(username));
-        if(usuario.username === username){
+        if(usuario.username == username){
             return usuario;
         }
     }

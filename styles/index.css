@@ -1,0 +1,23 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+nav{
+    padding: 15px;
+    background-color: gray;
+    display: flex;
+    justify-content: flex-end;
+}
+
+nav > button{
+    margin: 0 20px;
+    padding: 5px;
+    background-color: grey;
+    border: none;
+    cursor: pointer;
+}
+
+main{
+    margin: 15px 10px;
+}

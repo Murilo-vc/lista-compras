@@ -40,7 +40,7 @@ function exibirListas(usuario){
         edit.onclick = function (){
 
             sessionStorage.setItem('SELECTED_LIST', lista.id)
-            location.replace("../pages/editarLista.html")
+            location.replace("./pages/editarlista.html")
         }
         removeList.innerText = 'Remover Lista'
         removeList.onclick = function (){

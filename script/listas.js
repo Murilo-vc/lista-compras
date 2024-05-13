@@ -6,6 +6,8 @@ function exibirListas(usuario){
     var tbodyref = document.getElementById("lista-compras").getElementsByTagName("tbody")[0]
 
     
+    if(usuario) {}
+
     usuario.listas.forEach(idLista => {
         
         //utiliza o id da lista para pegar a mesma no localstorage
@@ -86,7 +88,6 @@ let button = document.getElementById("cadastra-lista");
 button.addEventListener('click', function(){
     var nomeLista = document.getElementById('nome-lista').value;
 
-    console.log('yes')
     //cria objeto Date
     var today = new Date();
 

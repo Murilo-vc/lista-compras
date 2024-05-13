@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
     <link rel="stylesheet" href="../styles/login.css">
+    <link rel="stylesheet" href="../styles/scroll.css">
 </head>
 <body>
     <div class="form-container">
@@ -16,18 +17,18 @@
                 <p>Usuário não autenticado!</p>
             </div>
             <div id="info-container">
-                <div>
+                <div class="container-label">
                     <label for="fuser">Usuário: </label>
                     <input type="text" id="fuser" required>    
                 </div>
-                <div>
+                <div class="container-label">
                     <label for="fsenha">Senha: </label>
                     <input type="password" id="fsenha" required>
                 </div>
             </div>
             <div class="button-container">
-                <input type="checkbox" id="fpconectado">
-                <label for="fpconectado">Permanecer <br>Conectado</label>
+                    <input type="checkbox" id="fpconectado">
+                    <label for="fpconectado">Permanecer Conectado</label>
                 <button type="button" id="login-button">Entrar</button>
             </div>
             <div>

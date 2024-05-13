@@ -40,6 +40,11 @@ function exibirItens(lista){
     });
 }
 
+let botaoVolta = document.getElementById("volta");
+botaoVolta.addEventListener('click', () => {
+    window.location.replace('/index.html');
+});
+
 var idLista = sessionStorage.getItem('SELECTED_LIST')
 var lista = JSON.parse(localStorage.getItem(idLista))
 const button = document.getElementById('cadastra-itens')

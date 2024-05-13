@@ -1,5 +1,4 @@
 import { Item } from "./item.js";
-
 export class Lista {
     constructor(nome, criacao){
         this.id = crypto.randomUUID();

@@ -1,5 +1,12 @@
 import { Usuario } from "./entities/usuario.js";
 
+document.addEventListener("DOMContentLoaded", verificarLogado)
+function verificarLogado(){
+    if(!!localStorage.getItem("LOGGED_USER") || !!sessionStorage.getItem("LOGGED_USER")){
+        window.location.href = "/index.html"
+    }
+}
+
 let msgAutenticao = document.getElementById("msg-autenticacao");
 let botaoLogin = document.getElementById("login-button");
 botaoLogin.addEventListener('click', (e) => {

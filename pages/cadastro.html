@@ -1,39 +1,44 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="../styles/scroll.css">
     <link rel="stylesheet" href="../styles/cadastro.css">
-
 </head>
+
 <body>
     <div class="form-container">
         <form method="post" id="form">
+
             <div class="form-title">
                 <h2>Cadastro</h2>
             </div>
             <div id="msg-cadastro" hidden>
                 <p>Usuário já cadastrado!</p>
             </div>
-            <div>
+            <div class="container-label">
                 <label for="fuser">Usuário: </label>
-                <input type="text" id="fuser" required>    
+                <input type="text" id="fuser" required>
             </div>
-            <div>
+            <div class="container-label">
                 <label for="fsenha">Senha: </label>
                 <input type="password" id="fsenha" required>
             </div>
-            <div class="button-container">
+            <div>
                 <button type="button" id="cadastro-button">Cadastrar</button>
             </div>
             <div>
-                <span>Já possui uma conta?</span> 
+                <span>Já possui uma conta?</span>
                 <a href="login.html">Entrar</a>
             </div>
+
         </form>
     </div>
 
     <script src="../script/cadastro.js" type="module"></script>
 </body>
+
 </html>

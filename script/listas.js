@@ -6,6 +6,8 @@ function exibirListas(usuario){
     var tbodyref = document.getElementById("lista-compras").getElementsByTagName("tbody")[0]
 
     
+    if(usuario) {}
+
     usuario.listas.forEach(idLista => {
         
         //utiliza o id da lista para pegar a mesma no localstorage

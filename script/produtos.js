@@ -1,4 +1,4 @@
-import { Item } from "./entities/item.js";
+import { Item } from "./modules/item.js";
 
 document.addEventListener("DOMContentLoaded", verificarLogado)
 function verificarLogado(){
@@ -25,6 +25,7 @@ function exibirItens(lista){
         var newText = document.createElement("input")
         newText.value = item.nome
         newText.readOnly = true;
+        newText.className = 'nome-item'
         
 
         //atribui o nome do produto a sua celula
@@ -38,6 +39,7 @@ function exibirItens(lista){
             if(index > -1){
                 if(editarItem.innerText == 'Editar'){
                     newText.readOnly = false
+                    newText.focus()
                     editarItem.innerText = 'Salvar'
                 } else if(editarItem.innerText == 'Salvar'){
                     newText.readOnly = true

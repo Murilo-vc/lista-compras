@@ -45,7 +45,8 @@ function exibirItens(lista){
                     newText.readOnly = true
                     editarItem.innerText = 'Editar'
                     if(newText.value == ''){
-                        alert('O nome não pode ser vazio')   
+                        alert('O nome não pode ser vazio')
+                        location.reload() 
                     } else {
                         lista.itens[index].nome = newText.value
                         localStorage.setItem(lista.id, JSON.stringify(lista))

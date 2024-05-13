@@ -86,3 +86,10 @@ nav button:hover {
     background-color: #012842;
     cursor: pointer;
 }
+
+.nome-item {
+  background:none; 
+  border: none; 
+  border-radius: 30px;
+  padding: 10px 40px 10px 10px;
+}

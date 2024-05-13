@@ -36,6 +36,7 @@ function exibirListas(usuario){
         //Cria os botoes de interacao da lista
         var edit = document.createElement("button")
         var removeList = document.createElement("button")
+        var rename = document.createElement("button")
 
         //Muda o texto dos botoes e a funcao onclick dos mesmos
         edit.innerText = 'Editar'
@@ -57,9 +58,17 @@ function exibirListas(usuario){
             }
         }
 
+        rename.innerText = 'Renomear'
+        rename.onclick = function (){
+
+            sessionStorage.setItem('SELECTED_LIST', lista.id)
+            location.replace("./pages/renomear.html")
+        }
+
         //Insere os botoes como parte da tabela
         newRow.insertCell().appendChild(edit)
         newRow.insertCell().appendChild(removeList)
+        newRow.insertCell().appendChild(rename)
     });
 
 }

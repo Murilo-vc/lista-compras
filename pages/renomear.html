@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Compras</title>
+    <script src="../script/renomear.js"></script>
+</head>
+
+<body>
+    <table id="lista-compras">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nome</th>
+                <th>Criação</th>
+            </tr>
+        </thead>
+        <tbody>
+            
+        </tbody>
+    </table><br /><br />
+
+    <form id="editar-form" action="../index.html" method="post">
+        <label for="novo-nome">Novo Nome:</label>
+        <input type="text" id="novo-nome" name="novo-nome">
+        <button type="submit">Confirmar Alteração</button>
+    </form>
+</body>
+
+<script>
+    
+    document.getElementById("editar-form").addEventListener("submit", function(event) {
+        event.preventDefault(); 
+
+        var novoNome = document.getElementById("novo-nome").value;
+
+        var selectedListId = sessionStorage.getItem('SELECTED_LIST');
+
+        var lista = JSON.parse(localStorage.getItem(selectedListId));
+
+        lista.nome = novoNome;
+
+        localStorage.setItem(selectedListId, JSON.stringify(lista));
+
+        location.replace("../index.html");
+    });
+</script>
+</html>

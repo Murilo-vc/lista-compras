@@ -13,10 +13,36 @@ function exibirItens(lista){
         var nomeCell = newRow.insertCell();
 
         //cria um bloco de texto com o nome do item
-        var newText = document.createTextNode(item.nome);
+        // var newText = document.createTextNode(item.nome);
+        var newText = document.createElement("input")
+        newText.value = item.nome
+        newText.readOnly = true;
+        
 
         //atribui o nome do produto a sua celula
         nomeCell.appendChild(newText)
+
+        var editarItem = document.createElement("button")
+        editarItem.innerText = 'Editar'
+
+        editarItem.onclick = function () {
+            const index = lista.itens.indexOf(item)
+            if(index > -1){
+                if(editarItem.innerText == 'Editar'){
+                    newText.readOnly = false
+                    editarItem.innerText = 'Salvar'
+                } else if(editarItem.innerText == 'Salvar'){
+                    newText.readOnly = true
+                    editarItem.innerText = 'Editar'
+                    if(newText.value == ''){
+                        alert('O nome não pode ser vazio')   
+                    } else {
+                        lista.itens[index].nome = newText.value
+                        localStorage.setItem(lista.id, JSON.stringify(lista))
+                    }
+                }
+            }
+        }
 
         //cria um bottao para remover o item
         var removerItem = document.createElement("button")
@@ -27,8 +53,6 @@ function exibirItens(lista){
 
             const index = lista.itens.indexOf(item)
             if(index > -1){
-
-                console.log('bimbim')
                 lista.itens.splice(index, 1)
                 localStorage.setItem(lista.id, JSON.stringify(lista))
                 location.reload()
@@ -36,6 +60,7 @@ function exibirItens(lista){
         }
 
         //atribui o botao a ultima celula da linha
+        newRow.insertCell().appendChild(editarItem)
         newRow.insertCell().appendChild(removerItem)
     });
 }

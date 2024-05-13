@@ -1,43 +1,51 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Bem vindo!</title>
-        <link rel="stylesheet" href="./styles/index.css">
-    </head>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bem vindo!</title>
+    <link rel="stylesheet" href="./styles/index.css">
+</head>
+
 <body>
-<script src="main.js" type="module"></script>
+    <script src="main.js" type="module"></script>
+
     <header>
         <nav>
             <button type="button" id="logout-button" name="logout-button">Sair</button>
         </nav>
     </header>
+
     <main>
-        <div>
-            <h1>Bem Vindo :)</h1>
+        <div class="container">
+            <div>
+                <h1>Bem Vindo!</h1>
+            </div>
+            <div>
+                <h2>Lista de compras</h2>
+                <br>
+                <input type="text" id="nome-lista" name="nome-lista" placeholder="Nome lista">
+                <button type="button" id="cadastra-lista">Cadastrar</button>
+            </div>
+
+            <table id="lista-compras">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nome</th>
+                        <th>Criação</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                </tbody>
+            </table>
         </div>
-        <div>
-            <h2>Lista de compras</h2>
-            <input type="text" id="nome-lista" name="nome-lista">
-            <button type="button" id="cadastra-lista">Cadastrar</button>
-        </div>
-    
-        <table id="lista-compras">
-            <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>Nome</th>
-                    <th>Criação</th>
-                    <th>Ações</th>
-                </tr>
-            </thead>
-            <tbody>
-    
-            </tbody>
-        </table>
-    </body>
-    </main>
+</body>
+</main>
 <script src="script/listas.js" type="module"></script>
 <script src="script/logout.js" type="module"></script>
+
 </html>

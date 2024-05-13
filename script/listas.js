@@ -79,7 +79,6 @@ let button = document.getElementById("cadastra-lista");
 button.addEventListener('click', function(){
     var nomeLista = document.getElementById('nome-lista').value;
 
-    console.log('yes')
     //cria objeto Date
     var today = new Date();
 

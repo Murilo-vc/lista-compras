@@ -41,5 +41,6 @@ botaoLogin.addEventListener('click', (e) => {
      else{
         console.log('Senha Incorreta!');
         document.getElementById("fsenha").value = '';
+        document.getElementById("msg-autenticacao").removeAttribute(hidden);
     }
 });

@@ -1,5 +1,13 @@
 import { Item } from "./entities/item.js";
 
+document.addEventListener("DOMContentLoaded", verificarLogado)
+function verificarLogado(){
+    if(!localStorage.getItem("LOGGED_USER") && !sessionStorage.getItem("LOGGED_USER")){
+        window.location.href = "/index.html"
+    }
+}
+
+
 function exibirItens(lista){
 
     var tbodyref = document.getElementById("lista-itens").getElementsByTagName("tbody")[0]
@@ -82,6 +90,11 @@ exibirItens(lista)
 button.addEventListener('click', function () {
 
     var nomeItem = document.getElementById('nome-item').value
+
+    if (!nomeItem) {
+        alert("Insira o nome de um produto");
+        return;
+    }
 
     var item = new Item(nomeItem)
 

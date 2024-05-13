@@ -88,6 +88,11 @@ let button = document.getElementById("cadastra-lista");
 button.addEventListener('click', function(){
     var nomeLista = document.getElementById('nome-lista').value;
 
+    if (!nomeLista) {
+        alert("Insira o nome de uma lista");
+        return;
+    }
+
     //cria objeto Date
     var today = new Date();
 

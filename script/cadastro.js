@@ -1,5 +1,12 @@
 import * as usuarioEntity from './entities/usuario.js'
 
+document.addEventListener("DOMContentLoaded", verificarLogado)
+function verificarLogado(){
+    if(!!localStorage.getItem("LOGGED_USER") || !!sessionStorage.getItem("LOGGED_USER")){
+        window.location.href = "/index.html"
+    }
+}
+
 let msgCadastro = document.getElementById("msg-cadastro");
 let button = document.getElementById("cadastro-button");
 button.addEventListener('click', function () {

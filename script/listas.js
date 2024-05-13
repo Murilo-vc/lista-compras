@@ -1,4 +1,4 @@
-import * as listaEntity from "./entities/lista.js"
+import * as listaEntity from "./modules/lista.js"
 
 function exibirListas(usuario){
 

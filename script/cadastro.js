@@ -1,4 +1,4 @@
-import * as usuarioEntity from './entities/usuario.js'
+import * as usuarioEntity from './modules/usuario.js'
 
 document.addEventListener("DOMContentLoaded", verificarLogado)
 function verificarLogado(){

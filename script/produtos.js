@@ -1,4 +1,4 @@
-import { Item } from "./entities/item.js";
+import { Item } from "./modules/item.js";
 
 document.addEventListener("DOMContentLoaded", verificarLogado)
 function verificarLogado(){

@@ -6,28 +6,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lista de Compras</title>
     <script src="../script/renomear.js"></script>
+    <link rel="stylesheet" href="../styles/index.css">
 </head>
 
 <body>
-    <table id="lista-compras">
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>Nome</th>
-                <th>Criação</th>
-            </tr>
-        </thead>
-        <tbody>
-            
-        </tbody>
-    </table><br /><br />
+    <header>
+        <nav>
+            <button type="button" id="volta">Voltar</button>
+        </nav>
+    </header>
+    <main>
+        <div class="container">
+        <form id="editar-form" action="../index.html" method="post">
 
-    <form id="editar-form" action="../index.html" method="post">
         <label for="novo-nome">Novo Nome:</label>
         <input type="text" id="novo-nome" name="novo-nome">
         <button type="submit">Confirmar Alteração</button>
     </form>
-    <button type="button" id="volta">Voltar</button>
+        <table id="lista-compras">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nome</th>
+                    <th>Criação</th>
+                </tr>
+            </thead>
+            <tbody>
+                
+            </tbody>
+        </table><br /><br />
+
+    </div>
+    </main>
 </body>
 
 <script>

@@ -7,7 +7,6 @@ function verificarLogado(){
     }
 }
 
-let msgAutenticao = document.getElementById("msg-autenticacao");
 let botaoLogin = document.getElementById("login-button");
 botaoLogin.addEventListener('click', (e) => {
     e.preventDefault();
@@ -17,9 +16,8 @@ botaoLogin.addEventListener('click', (e) => {
 
     //verifica se existe um usuario com esse nome
     if(!localStorage.getItem(nome)){
-
         console.log('Usuário não encontrado!');
-        msgAutenticao.removeAttribute("hidden");
+        document.querySelector("#msg-autenticacao").removeAttribute("hidden");
         document.getElementById("fsenha").value = '';
         return;
     }
@@ -41,6 +39,5 @@ botaoLogin.addEventListener('click', (e) => {
      else{
         console.log('Senha Incorreta!');
         document.getElementById("fsenha").value = '';
-        document.getElementById("msg-autenticacao").removeAttribute(hidden);
     }
 });

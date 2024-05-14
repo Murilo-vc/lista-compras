@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
     <link rel="stylesheet" href="../styles/login.css">
     <link rel="stylesheet" href="../styles/scroll.css">
 </head>
+
 <body>
     <div class="form-container">
         <form method="post" id="form">
@@ -16,23 +18,21 @@
             <div id="msg-autenticacao" hidden>
                 <p>Usuário não autenticado!</p>
             </div>
-            <div id="info-container">
-                <div class="container-label">
-                    <label for="fuser">Usuário: </label>
-                    <input type="text" id="fuser" required>    
-                </div>
-                <div class="container-label">
-                    <label for="fsenha">Senha: </label>
-                    <input type="password" id="fsenha" required>
-                </div>
+            <div class="container-label">
+                <label for="fuser">Usuário: </label>
+                <input type="text" id="fuser" required>
+            </div>
+            <div class="container-label">
+                <label for="fsenha">Senha: </label>
+                <input type="password" id="fsenha" required>
             </div>
             <div class="button-container">
-                    <input type="checkbox" id="fpconectado">
-                    <label for="fpconectado">Permanecer Conectado</label>
+                <input type="checkbox" id="fpconectado">
+                <label for="fpconectado">Permanecer Conectado</label>
                 <button type="button" id="login-button">Entrar</button>
             </div>
             <div>
-                <span>Não possui uma conta?</span> 
+                <span>Não possui uma conta?</span>
                 <a href="cadastro.html">Criar</a>
             </div>
         </form>
@@ -40,4 +40,5 @@
 
     <script src="../script/login.js" type="module"></script>
 </body>
+
 </html>
